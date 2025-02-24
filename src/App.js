@@ -27,7 +27,8 @@ function App() {
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    console.log("Oiee");
+    console.log("Inicializando a configuração Firebase...");
+    console.log("Inicializando o Analytics:" + analytics);
   }, []);
 
   return (

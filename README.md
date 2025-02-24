@@ -4,49 +4,70 @@ Este repositório foi criado para auxiliar estudantes da disciplina Desenvolvime
 
 ## 🚀 Hospedando um sistema React no Firebase
 
-1. **Crie um projeto React**:
+1. **[Crie um novo repositório no GitHub](https://github.com/new)**:
+   Crie um repositório vazio, sem README.
+
+2. **Crie um projeto React**:
    Certifique-se de ter um projeto React configurado. Se não, crie um novo:
    ```bash
-   npx create-react-app meu-app
-   cd meu-app
+   npx create-react-app .
    ```
 
-2. **Instale o Firebase CLI**:
+3. **[Crie conta no Firebase](https://firebase.google.com/)**
+   OBS: a conta não pode ser com e-mail institucional (ufc.br) devido configuração realizada pelo Administrador do serviço na UFC.
+
+4. **[Crie um projeto no Firebase](https://console.firebase.google.com/u/0/)**
+   Vamos usar esse projeto para hospedar nosso sistema.
+
+5. **Instale o Firebase CLI**:
    Certifique-se de ter o Firebase CLI instalado globalmente:
    ```bash
    npm install -g firebase-tools
    ```
 
-3. **Faça login no Firebase**:
+6. **Faça login no Firebase**:
    Faça login usando o Firebase CLI:
    ```bash
    firebase login
    ```
+   Se estiver usando o Codespace, utilize sem localhost.
+   ```bash
+   firebase login --no-localhost
+   ```
 
-4. **Inicialize o projeto no Firebase**:
+7. **Inicialize o projeto no Firebase**:
    Dentro do diretório do seu projeto React, inicie o Firebase:
    ```bash
    firebase init
    ```
    Durante a configuração:
-   - Escolha `Hosting`.
-   - Selecione o projeto Firebase.
-   - Defina o diretório de origem para `build`.
+   - Escolha a opção `Hosting` como serviço. Para selecionar utilize o `espaço` e depois `enter`. 
+   - Selecione o projeto que você criou no Firebase.
+   - Defina o diretório de origem para `build`. Atenção, pois o default é o `public`.
    - Escolha "Sim" para configuração de um app como single-page application.
+   - Preferencialmente utilize o deploy automático do GitHub. Caso dê problema na configuração, selecione como não. 
 
-5. **Compile o projeto React**:
+   Exemplo de respostas:
+   ```bash
+   ? What do you want to use as your public directory? build
+   ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+   ? Set up automatic builds and deploys with GitHub? Yes
+   ? File build/index.html already exists. Overwrite? No
+   ```
+
+8. **Compile o projeto React**:
    Antes de hospedar, compile o projeto para produção:
    ```bash
    npm run build
    ```
 
-6. **Implante o projeto**:
+9. **Implante o projeto**:
    Após compilar, envie os arquivos para o Firebase Hosting:
    ```bash
    firebase deploy
    ```
 
-   O Firebase fornecerá uma URL onde seu app estará disponível.
+   O Firebase fornecerá uma URL onde seu app estará disponível. \o/
 
 ## 🔐 Adicionando Login com Gmail no Firebase
 
